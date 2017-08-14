@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Ionic Blank
     </ion-title>
@@ -7,8 +7,28 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h2>Add a Todo</h2>
+    <ion-item no-lines>
+      <ion-input #newTodo (keyup.enter)="addTodo(newTodo.value); newTodo.value=''" type="text" placeholder="Add new todo..." ></ion-input>
+      <button ion-button clear large item-right (click)="addTodo(newTodo.value); newTodo.value=''">
+        <ion-icon name="add"> </ion-icon>
+      </button>
+    </ion-item>
+    <h2>Todo List <small>Swipe a todo to delete</small></h2>
+    <ion-list no-lines>
+      <ion-item-sliding #slidingItem *ngFor="let todo of todos; let index = index">
+        <ion-item>
+          <ion-checkbox (click)="toggleComplete(todo)" [checked]="todo.isComplete"></ion-checkbox>
+          <ion-item text-wrap item-left [class.completed]="todo.isComplete">
+            {{ todo.description }}
+          </ion-item>
+        </ion-item>
+        <ion-item-options >
+          <!-- <button ion-button (click)="return;">Edit</button> -->
+          <button ion-button color="danger" (click)="deleteTodo(todo, index)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
 </ion-content>

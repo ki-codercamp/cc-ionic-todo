@@ -1,4 +1,4 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+ionic todo app for hands on assignment deployed to heroku and ionic view.
 
 ## How to use this template
 
@@ -23,4 +23,3 @@ $ ionic cordova run ios
 ```
 
 Substitute ios for android if not on a Mac.
-
