@@ -1,8 +1,9 @@
+import { TodoEditPage } from './../todo-edit/todo-edit';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ItemSliding, Item } from 'ionic-angular';
 import {TodoServiceProvider} from '../../providers/todo-service/todo-service';
 import {Todo} from '../../app/todo';
-import {ItemSliding, Item} from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
@@ -43,6 +44,14 @@ export class HomePage {
         .subscribe(response => {
           this.todos.splice(index, 1);
         });
+  }
+
+  navToEdit(todo: Todo, index: number){
+    this.navCtrl.push(TodoEditPage, {
+      todo: todo,
+      todos: this.todos,
+      index:index
+    });
   }
 
 }

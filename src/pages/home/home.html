@@ -24,7 +24,7 @@
           </ion-item>
         </ion-item>
         <ion-item-options >
-          <!-- <button ion-button (click)="return;">Edit</button> -->
+          <button ion-button (click)="navToEdit(todo, index); slidingItem.close() " >Edit</button>
           <button ion-button color="danger" (click)="deleteTodo(todo, index)">
             <ion-icon name="trash"></ion-icon>
           </button>

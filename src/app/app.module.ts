@@ -1,3 +1,4 @@
+import { TodoEditPage } from './../pages/todo-edit/todo-edit';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,7 +13,8 @@ import { TodoServiceProvider } from '../providers/todo-service/todo-service';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TodoEditPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { TodoServiceProvider } from '../providers/todo-service/todo-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TodoEditPage
   ],
   providers: [
     StatusBar,
